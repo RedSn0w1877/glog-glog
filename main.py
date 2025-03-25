@@ -12,3 +12,12 @@
 # and f is the fraction of co2
 # screw lines 8-12 just know that 7810000000000 kg of co2 gets u 1ppm
 # a ppm is like a part per million
+import people
+import calculateEmissions as ce
+import calculateTempChange as ctc
+def main(uptoYear,childrenPerGeneration, childMakingAge, lifespan, populationNow, carbonPerPerson):
+    emissions = ce.emissions(upto=uptoYear, c=childrenPerGeneration, g=childMakingAge, l=lifespan, i=populationNow, carbonPerPerson=carbonPerPerson)
+    print(emissions)
+    o = ctc.co2_kg_to_temp(emissions, 420, 3)
+    return o
+print(main(2030,3,28,85,8000000000,15))

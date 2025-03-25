@@ -11,16 +11,16 @@ def human(i:float, c:float, g:float, l:float, y:float):
     humans = i * (c/2)**(y/g)*(m.e)**(-y/l) # don't even ask me how this works
     return humans
 
-def humansInYearList(upto, c, g, l):
+def humansInYearList(upto:int, c:float, g:float, l:float, i:float):
     currentYear = dt.datetime.today().year 
     delta = upto - currentYear + 1 #assuming it is jan 1
     humanPopulations = []
-    initial = 8000000000
+    initial = i
+    humanPopulations.append(initial)
     for x in range(delta+1):
         population = human(initial, c, g, l, 1)
         initial = population
-        humanPopulations.append(population)
-
+        humanPopulations.append(m.floor(population))
     return humanPopulations
 
-print(humansInYearList(2050,3.5,28,85))
+
