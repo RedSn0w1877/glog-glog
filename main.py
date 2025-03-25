@@ -15,6 +15,7 @@
 import people
 import calculateEmissions as ce
 import calculateTempChange as ctc
+import time
 def main(uptoYear,childrenPerGeneration, childMakingAge, lifespan, populationNow, carbonPerPerson):
     emissions = ce.emissions(upto=uptoYear, c=childrenPerGeneration, g=childMakingAge, l=lifespan, i=populationNow, carbonPerPerson=carbonPerPerson)
     o = ctc.co2_kg_to_temp(emissions, 420, 3)
@@ -27,3 +28,4 @@ initial = int(input("What is the current population? "))
 ls = int(input("What is the average lifespan? "))
 carbon = int(input("How much CO2 does each person create per year (Set to 15 if you do not know.)? "))
 print(f'The temperature will increase by {main(uptoYear=upto, childrenPerGeneration=children, childMakingAge=age,populationNow=initial,carbonPerPerson=carbon, lifespan=ls)} degrees celcius.')
+time.sleep(10)
