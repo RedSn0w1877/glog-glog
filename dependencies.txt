@@ -1,0 +1,9 @@
+Dependencies
+Interpreter:
+Python 3.13.1
+Modules:
+pip (with get-pip.py)
+Math (included)
+requests (get using pip)
+BeautifulSoup4 (get using pip)
+
