@@ -6,9 +6,9 @@ import random
 from threading import Thread
 
 def get_world_population():
-    # Use the provided number as the total world population
+    # Use the updated number as the total world population
     try:
-        population = "811771188854982"  # Provided number as a string
+        population = "8213348585"  # Updated population number as a string
         return int(population)
     except ValueError:
         return "Invalid population number"
