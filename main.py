@@ -11,6 +11,7 @@
 # mGt is the mass of the atmosphere 5.15*10^6 gigatones, aka 515000000000000000 kilograms
 # and f is the fraction of co2
 # screw lines 8-12 just know that 7810000000000 kg of co2 gets u 1ppm
+# screw lines 8-12 just know that 7810000000000 kg of co2 gets u 1ppm
 # a ppm is like a part per million
 import people
 import calculateEmissions as ce
@@ -20,6 +21,7 @@ def main(uptoYear,childrenPerGeneration, childMakingAge, lifespan, populationNow
     emissions = ce.emissions(upto=uptoYear, c=childrenPerGeneration, g=childMakingAge, l=lifespan, i=populationNow, carbonPerPerson=carbonPerPerson)
     o = ctc.co2_kg_to_temp(emissions, 420, 3)
     return o
+print(main(2030,3,28,85,8000000000,15))
 
 upto = int(input("Up to which year? "))
 children = int(input("How many children does each couple have? "))
