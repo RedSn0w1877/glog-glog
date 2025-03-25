@@ -1,1 +1,1 @@
-something cool
+Welcome! This is our entire Github proect for the 2025 Hackathon. This is just a brief overview of the project. Our dependencies will be listed as a .txt file and everything we work on will and has been documented. :)
