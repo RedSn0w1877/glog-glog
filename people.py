@@ -10,4 +10,4 @@ def human(i, c, g, l, y):
     humans = i * (c/2)**(y/g)*(m.e)**(-y/l) # don't even ask me how this works
     return humans
 
-print(human(i=8000000000,c=2,g=28,l=80,y=50)) #ok we need to have 4 children or we go extinct
+#print(human(i=8000000000,c=2,g=28,l=80,y=50)) #ok we need to have 4 children or we go extinct
