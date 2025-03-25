@@ -24,7 +24,7 @@ def calculate_population():
         progress_bar.grid(row=6, column=0, columnspan=2)
 
         # Set a random delay between 1 and 20 seconds
-        total_time = random.uniform(1, 20)
+        total_time = random.uniform(1, 5)
         step_time = total_time / 100  # Divide the total time into 100 steps
 
         for i in range(101):  # Simulate progress bar
