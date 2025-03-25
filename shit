@@ -1,14 +1,13 @@
 import tkinter as tk
 import math as m
-import requests
-from bs4 import BeautifulSoup
 
 def get_world_population():
-    url = 'https://www.worldometers.info/world-population/'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    population = soup.find('div', class_='col-md-8 country-pop-description').find('strong').text.replace(',', '') # remove commas
-    return int(population)
+    # Use the provided number as the total world population
+    try:
+        population = "811771188854982"  # Provided number as a string
+        return int(population)
+    except ValueError:
+        return "Invalid population number"
 
 def human(initial_population, children_per_person, years_between_kids, lifespan, years_future):
     humans = initial_population * (children_per_person / 2)**(years_future / years_between_kids) * (m.e)**(-years_future / lifespan)
@@ -17,6 +16,9 @@ def human(initial_population, children_per_person, years_between_kids, lifespan,
 def calculate_population():
     try:
         initial_population = get_world_population()
+        if isinstance(initial_population, str):  # Check if get_world_population returned an error message
+            result_label.config(text=initial_population)  # Display the error message
+            return
         children = float(children_entry.get())
         years_between = float(years_between_entry.get())
         lifespan = float(lifespan_entry.get())
@@ -62,4 +64,5 @@ calculate_button.grid(row=4, column=0, columnspan=2)
 result_label = tk.Label(window, text="")
 result_label.grid(row=5, column=0, columnspan=2)
 
+# Start the Tkinter event loop
 window.mainloop()
